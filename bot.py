@@ -53,9 +53,9 @@ async def on_ready():
             elif "#chart" in text:
                 text = text.replace("#chart", "").strip()
             elif "#Chart" in text:
-                text = text.replace("#chart", "").strip()
+                text = text.replace("#Chart", "").strip()
             elif "#CHART" in text:
-                text = text.replace("#chart", "").strip()
+                text = text.replace("#CHART", "").strip()
 
             media_embed = discord.Embed(color=0xffd500, description=f"@everyone\n**{text}**").set_image(url=media_link)
             await client.get_channel(charts_channel_id).send(embed=media_embed)
