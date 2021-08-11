@@ -1,4 +1,4 @@
-﻿# Trading Time Investments
+﻿# TTI - Charts
 **Contents:**
  1. bot.py
  2. config.json
