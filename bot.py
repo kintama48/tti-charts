@@ -43,12 +43,12 @@ async def on_ready():
             text = current_last_tweet.full_text.split()
             text.pop()
             text = " ".join(text)
-            media_embed = discord.Embed(color=0x5aabe8).set_image(url=media_link)
-            await client.get_channel(charts_channel_id).send(content=f"@everyone\n{text}", embed=media_embed)
+            media_embed = discord.Embed(color=0xffd500, description=f"@everyone\n**{text}**").set_image(url=media_link)
+            await client.get_channel(charts_channel_id).send(embed=media_embed)
         time.sleep(10)
 
-
-client.run(DISCORD_BOT_TOKEN)
+if __name__ == "__main__":
+    client.run(DISCORD_BOT_TOKEN)
 
 # This URL can be used to add the bot to your server. Copy and paste the URL into your browser,
 # choose a server to invite the bot to, and click “Authorize”. You need manage server permissions to do so.
