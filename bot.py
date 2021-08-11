@@ -43,6 +43,20 @@ async def on_ready():
             text = current_last_tweet.full_text.split()
             text.pop()
             text = " ".join(text)
+
+            if "#Charts" in text:
+                text = text.replace("#Charts", "").strip()
+            elif "#CHARTS" in text:
+                text = text.replace("#CHARTS", "").strip()
+            elif "#charts" in text:
+                text = text.replace("#charts", "").strip()
+            elif "#chart" in text:
+                text = text.replace("#chart", "").strip()
+            elif "#Chart" in text:
+                text = text.replace("#chart", "").strip()
+            elif "#CHART" in text:
+                text = text.replace("#chart", "").strip()
+
             media_embed = discord.Embed(color=0xffd500, description=f"@everyone\n**{text}**").set_image(url=media_link)
             await client.get_channel(charts_channel_id).send(embed=media_embed)
         time.sleep(10)
